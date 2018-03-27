@@ -15,10 +15,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 
-secrets = json.loads(open(os.path.join(ROOT_DIR, '.secrets', 'base.json')))
+secrets = json.loads(open(os.path.join(ROOT_DIR, '.secrets', 'base.json')).read())
 
 DEBUG = True
 ALLOWED_HOSTS = []
+SECRET_KEY = secrets['SECRET_KEY']
 # Application definition
 
 INSTALLED_APPS = [
